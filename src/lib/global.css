@@ -1,0 +1,24 @@
+:root {
+  --background-color: #23282e;
+  --text-color: #dddbdb;
+
+  --nav-boarder-color-light: #ff0000;
+  --nav-boarder-color-dark: #b00000;
+
+  --dropdown-boarder-color-light: #666666;
+  --dropdown-boarder-color-dark: #464646;
+
+  --nav-background-color: #1b2325;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color:var(--background-color);
+    color: var(--text-color);
+  }
