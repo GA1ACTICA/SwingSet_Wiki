@@ -28,7 +28,7 @@
 
   nav {
     height: 9.8vh;
-    width: 100vw;
+    width: 100%;
     background-color: var(--nav-background-color);
   }
 
@@ -60,5 +60,8 @@
 
   .left-align {
     margin-right: auto;
+    font-family: "Times New Roman", Times, serif;
+    font-size: x-large;
+    font-weight: bold;
   }
 </style>
