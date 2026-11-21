@@ -4,7 +4,7 @@
 
 <section>
   <article>
-    <div class="scrollable"><Markdown file="$lib/test.md" /></div>
+    <div class="scrollable"><Markdown file="use\test\test2/b.md" /></div>
   </article>
 </section>
 

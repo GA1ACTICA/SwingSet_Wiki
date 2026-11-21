@@ -9,7 +9,7 @@
   import java from "shiki/langs/java.mjs";
   import theme from "shiki/themes/catppuccin-mocha.mjs";
 
-  const files = import.meta.glob("/src/lib/**/*.md", {
+  const files = import.meta.glob("/src/**/*.md", {
     query: "?raw",
     import: "default",
     eager: true,
@@ -18,13 +18,18 @@
   let { file }: { file: string } = $props();
 
   function getMarkdown(path: string) {
+    path = path.trim();
+
     if (path.startsWith("$lib/")) {
       path = path.replace("$lib/", "/src/lib/");
+    } else if (!path.startsWith("/")) {
+      path = `/src/routes/${path}`;
     }
 
-    if (!path.startsWith("/")) {
-      path = `/src/lib/${path}`;
-    }
+    // Normalize path separators
+    path = path.replace(/\\/g, "/").replace(/\/+/g, "/");
+
+    console.log(path);
 
     return files[path];
   }
@@ -51,7 +56,7 @@
   {#if markdown}
     <Exmarkdown md={markdown} plugins={[shikiPlugin]} />
   {:else}
-    <p>Markdown file not found: {file}</p>
+    <p>Markdown file not found: {markdown}</p>
   {/if}
 </div>
 

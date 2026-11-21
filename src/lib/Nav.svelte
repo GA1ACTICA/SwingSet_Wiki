@@ -128,7 +128,7 @@
     mask-composite: intersect, exclude;
 
     /* Apply the animation when the element renders */
-    animation: border-wipe-left 0.8s ease-in-out both;
+    animation: border-wipe-left 0.5s ease-in-out both;
     pointer-events: none;
     z-index: -1;
   }
