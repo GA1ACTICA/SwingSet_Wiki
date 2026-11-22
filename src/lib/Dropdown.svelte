@@ -1,5 +1,7 @@
 <script>
   import arrow from "$lib/assets/arrow-up.svg";
+  import { slide } from "svelte/transition";
+
   let { title, children, open = $bindable(false) } = $props();
 </script>
 
@@ -10,7 +12,7 @@
   </button>
 
   {#if open}
-    <ul class="dropdown-content">
+    <ul transition:slide={{ duration: 300 }} class="dropdown-content">
       {@render children()}
     </ul>
   {/if}

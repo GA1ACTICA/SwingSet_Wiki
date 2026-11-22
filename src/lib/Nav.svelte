@@ -222,7 +222,8 @@
   }
 
   li {
-    margin: 0.5rem;
+    padding: 0.5rem;
+    margin: 0;
   }
 
   /* Navigation links */
