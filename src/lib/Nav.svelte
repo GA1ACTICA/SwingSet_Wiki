@@ -14,38 +14,113 @@
     </li>
     <hr />
 
-    <Dropdown
-      title="Game guides"
-      open={page.url.pathname.includes("/creating_a_game")}
-    >
+    <li>
+      <a
+        href="/wiki/setup-and-installation"
+        class:active={page.url.pathname.includes("/setup-and-installation")}
+        >Setup and Installation</a
+      >
+    </li>
+    <hr />
+
+    <Dropdown title="Basics" open={page.url.pathname.includes("/basics")}>
       {#snippet children()}
         <li>
           <a
-            class:active={page.url.pathname.includes("/setup")}
-            href="/wiki/creating_a_game/setup">Setup</a
+            class:active={page.url.pathname.includes("/creating-your-game")}
+            href="/wiki/basics/creating-your-game">Creating your game</a
           >
         </li>
         <li>
           <a
-            class:active={page.url.pathname.includes("/rules")}
-            href="/wiki/creating_a_game/rules">Game rules</a
+            class:active={page.url.pathname.includes(
+              "/settings-and-configuration",
+            )}
+            href="/wiki/basics/settings-and-configuration"
+            >Settings and Configuration</a
           >
         </li>
         <li>
           <a
-            class:active={page.url.pathname.includes("/examples")}
-            href="/wiki/creating_a_game/examples">Examples</a
+            class:active={page.url.pathname.includes("/using-the-UI")}
+            href="/wiki/basics/using-the-UI">Using the UI</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/drawing")}
+            href="/wiki/basics/drawing">Drawing</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/updating")}
+            href="/wiki/basics/updating">Updating</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/cursors")}
+            href="/wiki/basics/cursors">Cursors</a
           >
         </li>
       {/snippet}
     </Dropdown>
-
     <hr />
 
-    <li><a href="/" class:active={page.url.pathname === "/1"}>Test 2</a></li>
+    <Dropdown title="Advanced" open={page.url.pathname.includes("/advanced")}>
+      {#snippet children()}
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/advanced-UI")}
+            href="/wiki/advanced/advanced-UI">Advanced UI</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/transforms")}
+            href="/wiki/advanced/transforms">Transforms</a
+          >
+        </li>
+      {/snippet}</Dropdown
+    >
     <hr />
 
-    <li><a href="/" class:active={page.url.pathname === "/2"}>Test 3</a></li>
+    <Dropdown title="Java" open={page.url.pathname.includes("/java")}>
+      {#snippet children()}
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/interfaces")}
+            href="/wiki/java/interfaces">Interfaces</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/records")}
+            href="/wiki/java/records">Records</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/instanceof")}
+            href="/wiki/java/instanceof">instanceof</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/loops")}
+            href="/wiki/java/loops">Advanced loops</a
+          >
+        </li>
+        <li>
+          <a
+            class:active={page.url.pathname.includes("/threads")}
+            href="/wiki/java/threads">Threads</a
+          >
+        </li>
+      {/snippet}
+    </Dropdown>
+    <hr />
   </ul>
 </nav>
 
@@ -141,12 +216,9 @@
     overflow-y: auto;
   }
 
-  /* List and dropdown layout */
   ul,
   :global(.dropdown-content) {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
   }
 
   li {
@@ -154,17 +226,34 @@
   }
 
   /* Navigation links */
-  a,
+  a {
+    display: block;
+    box-sizing: border-box;
+    color: var(--text-color);
+    padding: 1.3rem;
+    text-align: right;
+    text-decoration: none;
+  }
+
   :global(.dropdown-toggle) {
     display: block;
     box-sizing: border-box;
     color: var(--text-color);
 
+    background-color: transparent;
+    border: none;
+
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    position: relative;
+
+    width: 87.5%;
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+
     padding: 1.3rem;
-    padding-left: 3rem;
 
     text-align: right;
-    text-decoration: none;
   }
 
   hr {

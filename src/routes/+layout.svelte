@@ -17,14 +17,16 @@
 <Header />
 
 <div class="layout">
-  {#if currentPath.includes("/wiki")}
-    <div
-      in:fly={{ x: -250, duration: 500, opacity: 0 }}
-      out:fly={{ x: -250, duration: 500, opacity: 0 }}
-    >
-      <Nav />
-    </div>
-  {/if}
+  <div class="nav-slot">
+    {#if currentPath.includes("/wiki")}
+      <div
+        in:fly={{ x: -250, duration: 500, delay: 400 }}
+        out:fly={{ x: -250, duration: 500, delay: 400 }}
+      >
+        <Nav />
+      </div>
+    {/if}
+  </div>
 
   <div class="page-container">
     {#key page.url.href}
@@ -42,6 +44,10 @@
   .layout {
     display: flex;
     align-items: flex-start;
+  }
+
+  .nav-slot {
+    flex: 0 0 15rem;
   }
 
   .page-container {

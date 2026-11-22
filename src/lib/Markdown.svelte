@@ -82,4 +82,39 @@
     overflow: auto;
     padding: 1rem;
   }
+
+  .markdownContainer {
+    background: var(--background-color);
+    margin: 5rem;
+    border-radius: 1rem;
+    padding: 8px;
+  }
+
+  .markdownContainer :global(pre) {
+    max-height: 50vh;
+    overflow: auto;
+    padding: 1rem;
+
+    /* Firefox */
+    scrollbar-color: #aaa transparent;
+  }
+
+  .markdownContainer :global(pre)::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .markdownContainer :global(pre)::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background: transparent;
+  }
+
+  .markdownContainer :global(pre)::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #888;
+  }
+
+  .markdownContainer :global(pre)::-webkit-scrollbar-thumb:hover {
+    background: #666;
+  }
 </style>

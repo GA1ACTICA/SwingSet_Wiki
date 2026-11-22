@@ -17,15 +17,6 @@
 </div>
 
 <style>
-  .dropdown-toggle {
-    background-color: transparent;
-    margin: 0.5rem;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border: none;
-    position: relative;
-  }
-
   .dropdown-toggle::after {
     content: "";
     position: absolute;

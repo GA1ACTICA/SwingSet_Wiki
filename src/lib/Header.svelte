@@ -5,12 +5,10 @@
     <nav>
       <ul>
         <li class="left-align"><a href="/">SwingSet</a></li>
-        <li><a href="/wiki">Wiki</a></li>
+        <li><a href="/wiki/introduction">Wiki</a></li>
         <li><a href="/use">Use</a></li>
         <li>
-          <a href="https://galactica.nrds.xyz/SwingSet%20Engine%20API/"
-            >Javadoc</a
-          >
+          <a href="/javadoc">Javadoc</a>
         </li>
         <li>
           <a href="https://github.com/GA1ACTICA/SwingSet_Engine">Github</a>
