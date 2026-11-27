@@ -20,12 +20,12 @@
 
 <style>
   header {
-    height: 10vh;
+    height: var(--header-height);
     background-color: gray;
   }
 
   nav {
-    height: 9.8vh;
+    height: calc(var(--header-height) - 0.1rem);
     width: 100%;
     background-color: var(--nav-background-color);
   }

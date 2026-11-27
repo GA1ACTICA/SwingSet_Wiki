@@ -67,14 +67,17 @@
 
   .markdownContainer :global(h1) {
     margin-block: 1.5rem 0.75rem;
+    font-size: xx-large;
   }
 
   .markdownContainer :global(h2) {
     margin-block: 1.25rem 0.625rem;
+    font-size: x-large;
   }
 
   .markdownContainer :global(h3) {
     margin-block: 1rem 0.5rem;
+    font-size: large;
   }
 
   .markdownContainer :global(pre) {
@@ -86,12 +89,16 @@
   .markdownContainer {
     background: var(--background-color);
     margin: 5rem;
+    margin-top: 0;
     border-radius: 1rem;
     padding: 8px;
   }
 
   .markdownContainer :global(pre) {
     max-height: 50vh;
+    width: min-content;
+    max-width: 50vw;
+
     overflow: auto;
     padding: 1rem;
 

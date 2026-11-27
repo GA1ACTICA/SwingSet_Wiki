@@ -17,11 +17,11 @@
 <Header />
 
 <div class="layout">
-  <div class="nav-slot">
+  <div class="nav-slot" class:collapsed={!currentPath.includes("/wiki")}>
     {#if currentPath.includes("/wiki")}
       <div
-        in:fly={{ x: -250, duration: 500, delay: 400 }}
-        out:fly={{ x: -250, duration: 500, delay: 400 }}
+        in:fly={{ x: -250, duration: 500 }}
+        out:fly={{ x: -250, duration: 500 }}
       >
         <Nav />
       </div>
@@ -31,6 +31,7 @@
   <div class="page-container">
     {#key page.url.href}
       <section
+        class:javadoc={currentPath.includes("/javadoc")}
         in:fade={{ duration: 400, delay: 400 }}
         out:fade={{ duration: 400 }}
       >
@@ -43,24 +44,47 @@
 <style>
   .layout {
     display: flex;
-    align-items: flex-start;
   }
 
   .nav-slot {
-    flex: 0 0 15rem;
+    flex: 0 0
+      max(
+        15vw,
+        clamp(var(--nav-min-width), var(--nav-width), var(--nav-max-width))
+      );
+    overflow: hidden;
+    transition: flex-basis 500ms ease;
+  }
+
+  .nav-slot.collapsed {
+    flex-basis: 0;
   }
 
   .page-container {
     display: grid;
     flex: 1;
     min-width: 0;
+    min-height: 0;
   }
 
   section {
     grid-area: 1 / 1;
     padding: 3rem;
-    max-width: 70%;
     width: 100%;
     box-sizing: border-box;
+    min-width: 0;
+  }
+
+  section.javadoc {
+    padding: 0;
+    max-width: none;
+    height: 90vh;
+  }
+
+  section.javadoc :global(iframe) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 </style>

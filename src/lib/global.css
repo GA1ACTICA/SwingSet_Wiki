@@ -10,6 +10,11 @@
 
   --nav-background-color: #1b2325;
 
+  --nav-width: 20vw;
+  --nav-min-width: 5rem;
+  --nav-max-width: 12rem;
+
+  --header-height: 4rem;
 
 }
 

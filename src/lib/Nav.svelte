@@ -209,10 +209,11 @@
   }
 
   nav {
-    min-width: 8rem;
-    width: 12rem;
+    width: 20vw;
+    min-width: 5rem;
+    max-width: 12rem;
     background-color: var(--nav-background-color);
-    height: 90vh;
+    height: calc(100vh - 4rem);
     overflow-y: auto;
   }
 
