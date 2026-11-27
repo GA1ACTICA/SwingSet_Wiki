@@ -44,27 +44,30 @@
 <style>
   .layout {
     display: flex;
+    height: calc(100vh - var(--header-height));
   }
 
   .nav-slot {
-    flex: 0 0
-      max(
-        15vw,
-        clamp(var(--nav-min-width), var(--nav-width), var(--nav-max-width))
-      );
+    flex: 0 0 auto;
+    width: max(
+      15vw,
+      clamp(var(--nav-min-width), var(--nav-width), var(--nav-max-width))
+    );
     overflow: hidden;
-    transition: flex-basis 500ms ease;
+    transition: width 500ms ease;
   }
 
   .nav-slot.collapsed {
-    flex-basis: 0;
+    width: 0;
   }
 
   .page-container {
-    display: grid;
     flex: 1;
     min-width: 0;
     min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
   }
 
   section {
